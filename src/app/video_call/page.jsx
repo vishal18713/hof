@@ -59,9 +59,9 @@ const page = () => {
     };
   return (
     <div className="w-full flex flex-col">
-      <h1>Current user id is {peerId}</h1>
-      <input type="text" value={remotePeerIdValue} onChange={e => setRemotePeerIdValue(e.target.value)} />
-      <button onClick={() => call(remotePeerIdValue)}>Call</button>
+      <h1 className='text-white text-lg font-medium font-satoshi'>Current user id is {peerId}</h1>
+      <input type="text" className='w-30% align-middle' value={remotePeerIdValue} onChange={e => setRemotePeerIdValue(e.target.value)} />
+      <button className='text-white text-xl font-semibold' onClick={() => call(remotePeerIdValue)}>Call</button>
       <div>
         <video ref={currentUserVideoRef} muted autoPlay />
       </div>
