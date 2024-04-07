@@ -11,7 +11,7 @@ const Page = () => {
   const [uploading, setUploading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    supply: '',
+    supply: '1',
     description: '',
     externalLink: '',
     image: ''
@@ -97,7 +97,7 @@ const Page = () => {
           {uploading ? "Uploading..." : "Upload"}
         </button>
         <div>
-          <p className='text-white'>The CID of the uploaded file is: {cid}</p>
+          {/* <p className='text-white'>The CID of the uploaded file is: {cid}</p> */}
         </div>
         <form onSubmit={handleSubmit}>
           <p className='text-white text-sm opacity-60 px-2'>Not all collections are eligible. <span className='text-blue-500'>Learn more</span></p>
@@ -111,7 +111,7 @@ const Page = () => {
             className="search_input_trans_create peer"
             onChange={handleChange}
           />
-          <p className='text-white text-lg font-semibold px-2 pt-8 pb-4'>Supply *</p>
+          {/* <p className='text-white text-lg font-semibold px-2 pt-8 pb-4'>Supply *</p>
           <input
             type="text"
             name="supply"
@@ -120,7 +120,7 @@ const Page = () => {
             required
             className="search_input_trans_create peer"
             onChange={handleChange}
-          />
+          /> */}
           <p className='text-white text-lg font-semibold px-2 pt-8 pb-4'>Description</p>
           <textarea
             type="text"

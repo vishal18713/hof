@@ -129,7 +129,7 @@ const page = () => {
         
       )} */}
       <div>
-  <p className='text-white'>The CID of the uploaded file is: {cid}</p>
+  {/* <p className='text-white'>The CID of the uploaded file is: {cid}</p> */}
 </div>
         {/* <p className='text-white text-sm opacity-60 px-2'>Not all collections are eligible. <span className='text-blue-500'>Learn more</span></p>
         <p className='text-white text-lg font-semibold px-2 pt-12 pb-4'>Name *</p>

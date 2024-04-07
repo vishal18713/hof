@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import nft1 from '../../../public/assets/nft.webp';
+import nft1 from '../../../../public/assets/nft.webp';
 import { CgDetailsMore } from "react-icons/cg";
 
 const page = () => {

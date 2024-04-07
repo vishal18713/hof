@@ -19,7 +19,10 @@ const nextConfig = {
   
       // Important: return the modified config
       return config;
-    }
+    },
+    images: {
+      domains: ['ipfs.io','mrio.medium.com'],
+    },
   };
   
   export default nextConfig;
