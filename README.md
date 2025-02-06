@@ -84,5 +84,3 @@ Alternatively, you can deploy on platforms like AWS, DigitalOcean, or your custo
 
 ---
 
-### Author
-Created by **Your Name**. Contributions are welcome!
