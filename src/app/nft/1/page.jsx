@@ -1,75 +1,104 @@
-import React from 'react'
-import Image from 'next/image'
-import nft1 from '../../../../public/assets/nft.webp';
-import { CgDetailsMore } from "react-icons/cg";
+import React from "react";
+import Image from "next/image";
+import nft1 from "../../../../public/assets/nft.webp";
 
-const page = () => {
-    return (
-        <div className='w-full min-h-screen flex justify-start items-start bg-black'>
-            <div className='w-[25%] flex flex-col items-start justify-start ml-16 mt-8'>
-                <div className='w-full bg-zinc-900 rounded-lg'>
-                    <div className='w-full h-8 bg-zinc-800 rounded-t-lg'>
+const nftData = {
+  title: "PRNS#5428",
+  owner: "Robin",
+  description: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  priceEth: "0.328",
+  priceUsd: "$1,087.36",
+  saleEnd: "7 April 2024 9:00 AM",
+  contractAddress: "0xabab...81",
+  tokenId: "5428",
+  chain: "Sepholia",
+  uploaded: "5 April 2024",
+  image: nft1,
+};
 
-                    </div>
+const nftTraits = [
+  { label: "Contract Address", value: nftData.contractAddress },
+  { label: "Token ID", value: nftData.tokenId },
+  { label: "Chain", value: nftData.chain },
+  { label: "Uploaded", value: nftData.uploaded },
+];
 
-                    <div className='w-full'><Image src={nft1} /></div>
-                </div>
-                <div className='w-full bg-zinc-900 rounded-lg px-4 mt-8 pt-4'>
-                    <div className='flex justify-start gap-4 items-center '>< CgDetailsMore className='text-white w-6 h-6' />
-                    <p className='text-white text-xl font-semibold'>Description</p>
-                    </div>
-                    <div className='h-[1px] w-full bg-zinc-600 my-6'></div>
-                    <div className='my-6'>
-                        <p className='text-white text-lg'><span className='opacity-70 text-md'>By</span> Robin</p>
-                        <p className='text-white text-sm pt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+export default function NFTDetails() {
+  return (
+    <div className="bg-black text-white min-h-screen p-8 flex flex-col md:flex-row gap-10">
+      {/* Left - NFT Image */}
+      <div className="md:w-1/2 flex justify-center">
+        <Image
+          src={nftData.image}
+          alt={nftData.title}
+          className="rounded-xl max-w-full h-auto border border-gray-700"
+        />
+      </div>
 
-                        <div className='h-[1px] w-full bg-zinc-600 my-6'></div>
-                        <p className='text-white text-xl font-semibold'>Details</p>
-                        <div className='flex flex-col justify-start items-start mt-4'>
-                            <div className='w-full flex justify-between items-center'>
-                                <div className='text-white'>Contract Address</div>
-                                <div className='text-blue-500 cursor-pointer'>0xabab...81</div>
-                            </div>
-                            <div className='w-full flex justify-between items-center'>
-                                <div className='text-white'>Token ID</div>
-                                <div className='text-blue-500 cursor-pointer'>5428</div>
-                            </div>
-                            <div className='w-full flex justify-between items-center'>  
-                                <div className='text-white'>Chain</div>
-                                <div className='text-white'>Sepholia</div>
-                            </div>
-                            <div className='w-full flex justify-between items-center'>
-                                <div className='text-white'>Uploaded</div>
-                                <div className='text-white'>5 April 2024</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='w-[65%] flex flex-col items-start justify-star mx-12 mt-8'>
-                    <h1 className='text-blue-400 text-2xl'>NFT</h1>
-                    <h1 className='text-white text-4xl font-semibold mt-4'>PRNS#5428</h1>
-                    <h1 className='text-white'>Owned by <span className='text-blue-400 mt-2'>Robin</span></h1>
-                    <div className='w-full text-white'>Like</div>
-                    <div className='w-full bg-zinc-900 rounded-lg mt-12 flex flex-col justify-start items-start py-4 px-4'>
-                        <p className='text-white text-lg font-medium'>Sale ends on 7 April 2024 9:00 AM</p>
-                        <div className='w-full h-[1px] bg-zinc-600 mt-6'></div>
-                        <p className='text-white opacity-75 mt-4'>Current Price</p>
-                        <div className='text-white text-3xl font-semibold mt-2'>0.328ETH <span className='text-base opacity-70'>$1,087.36</span></div>
-
-                        <div className='w-full flex justify-around items-center py-4'>
-                            <button type='button' className='blue_btn'>Buy Now</button>
-                            <button type='button' className='black_btn'>Make Offer</button>
-                        </div>
-                    </div>
-                    <div className='w-full aspect-video rounded-lg mt-12 flex flex-col justify-start items-end py-4 px-4'>
-                        <div className='w-3/4 h-full bg-zinc-800 rounded-lg'></div>
-                    </div>
-                    
-
-                </div>
+      {/* Right - NFT Details */}
+      <div className="md:w-1/2 space-y-4">
+        <h1 className="text-3xl font-bold">{nftData.title}</h1>
+        <div className="flex items-center gap-2 text-sm text-gray-400">
+          <span className="text-blue-400 font-semibold">NFT</span>
+          <span>• Owned by {nftData.owner}</span>
         </div>
-    )
-}
 
-export default page
+        {/* Price and Sale Info */}
+        <div className="bg-gray-800 p-4 rounded-lg">
+          <p className="text-gray-400">SALE ENDS ON</p>
+          <p className="text-white font-semibold">{nftData.saleEnd}</p>
+          <div className="h-[1px] w-full bg-gray-600 my-4"></div>
+          <p className="text-gray-400">CURRENT PRICE</p>
+          <p className="text-white text-2xl font-semibold">
+            {nftData.priceEth} ETH{" "}
+            <span className="text-gray-400 text-sm">{nftData.priceUsd}</span>
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-4">
+          <button className="w-full bg-blue-600 hover:bg-blue-500 py-2 rounded-lg">
+            Buy Now
+          </button>
+          <button className="w-full bg-gray-700 hover:bg-gray-600 py-2 rounded-lg">
+            Make Offer
+          </button>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex gap-6 mt-6 border-b border-gray-700 pb-2 text-sm">
+          <span className="text-white font-semibold border-b-2 border-white pb-1">
+            Details
+          </span>
+          <span className="text-gray-500 hover:text-white cursor-pointer">
+            Orders
+          </span>
+          <span className="text-gray-500 hover:text-white cursor-pointer">
+            Activity
+          </span>
+        </div>
+
+        {/* Description */}
+        <div className="mt-4">
+          <p className="text-gray-400 mb-2">Description</p>
+          <p>{nftData.description}</p>
+        </div>
+
+        {/* Traits */}
+        <div className="mt-4">
+          <p className="text-white font-semibold mb-4">Traits</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {nftTraits.map((trait, index) => (
+              <div key={index} className="bg-[#1a1a1a] rounded-lg p-4">
+                <p className="text-gray-400 text-xs">{trait.label}</p>
+                <p className="text-white font-semibold text-md">
+                  {trait.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

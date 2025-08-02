@@ -38,9 +38,9 @@ const Nav = () => {
         <p className="logo_text text-2xl">Noktua</p>
       </Link>
       <div className="flex-between gap-8">
-        <p className="logo_text">Home</p>
-        <p className="logo_text">Drop</p>
-        <p className="logo_text">Stats</p>
+        <Link href='/'><p className="logo_text">Home</p></Link>
+        <Link href='/drop'><p className="logo_text">Drop</p></Link>
+        <Link href='/stats'><p className="logo_text">Stats</p></Link>
         <Link href='/store'><p className="logo_text">Store</p></Link>
         <Link href='/select-create'><p className="logo_text">Create</p></Link>
       </div>
